@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="user/base::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+
+<section>
+		<h2>Loans Available</h2>
+		<hr>
+		<div class='loan'>
+			<div>
+
+		<table class="table table-striped">
+		  <thead>
+		    <tr class="table-info">
+		      <th scope="col">#</th>
+		      <th scope="col">Provided By</th>
+		      <th scope="col">Amount</th>
+		      <th scope="col">Interest Per Annum</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr th:each="l : ${loanslist}">
+		      <th th:text="${lStat.index+1}"></th>
+		      <td  th:text="${l.providedBy}">1</td>
+		      <td th:text="${l.amount}">1</td>
+		      <td th:text="${l.ipa}">1</td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div>
+			
+		</div>
+</section>
+
+</body>
+</html>
